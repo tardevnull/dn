@@ -1,4 +1,4 @@
-module dn
+module github.com/tardevnull/dn
 
 go 1.15
 
