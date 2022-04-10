@@ -19,7 +19,7 @@ jobs:
     - name: Set up Go 1.x
       uses: actions/setup-go@v3
       with:
-        go-version: ${{ go-version.go }}
+        go-version: ${{ matrix.go-version }}
       id: go
 
     - name: Check out code into the Go module directory
