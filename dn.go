@@ -130,7 +130,10 @@ func removeAttribute(index int, r rdnSET) (result rdnSET, err error) {
 	if index < 0 || index >= len(r) {
 		return nil, errors.New("dn: rdnSET bounds out of range")
 	}
-	return append(r[:index], r[index+1:]...), nil
+	result = make(rdnSET, len(r), len(r))
+	copy(result, r)
+	result = append(result[:index], result[index+1:]...)
+	return result, nil
 }
 
 //compareAttribute reports whether attribute x and attribute y matches.
